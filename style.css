@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Arial', sans-serif;
+  background-color: #000033; 
+  color: #5C452B;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 0;
+  padding-bottom: 80px; 
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../pic/bgpic.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.60; 
+  z-index: -1; 
+  pointer-events: none;
+}
+
+.welcome-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000033;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+  transition: opacity 0.8s ease;
+}
+
+.welcome-screen h1 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.welcome-screen button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #000033;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.welcome-screen button:hover {
+  background-color: #F6EF74;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo-topo {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.logo-topo img {
+  max-width: 200px;
+  height: auto;
+  display: inline-block;
+}
+
+#info {
+  text-align: center;
+  color: #e1cda6;
+  margin-top: 40px;
+}
+
+.upload-buttons {
+  margin-top: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.upload-buttons label {
+  background-color: #fff;
+  color: #333;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+
+.upload-buttons label:hover {
+  background-color: #e1cda6;
+  color: white;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.rodape {
+  background-color: #000033;
+  color: #e1cda6;
+  padding: 20px 10px;
+  font-size: 1rem;
+  border-top: 4px solid #e1cda6;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+}
+
+@media (max-width: 768px) {
+  .full-screen {
+    height: auto;
+    margin-top: 70px;
+  }
+
+  .hero-image img {
+    height: auto;
+    min-height: 300px;
+  }
+}

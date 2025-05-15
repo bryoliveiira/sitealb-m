@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luara - 15 Anos</title>
+  <link rel="stylesheet" href="./styles/style.css?v=32" />
+  <link rel="icon" href="./pic/favcon.png" type="image/png" />
+</head>
+
+<body>
+  <div class="welcome-screen" id="welcome">
+    <h1>Seja parte dessa lembrança especial!📸</h1>
+    <button onclick="startSite()">Entrar no site</button>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="music.MP3" type="audio/mpeg" />
+    Seu navegador não suporta áudio HTML5.
+  </audio>
+
+  <header>
+    <div class="logo-topo">
+      <img src="./pic/logoheader.png" alt="Logo Luara 15 anos" />
+    </div>
+  </header>
+
+  <section id="info" class="section">
+    <h2>Bem-vindo ao meu Álbum Virtual!</h2>
+    <p>
+      Estou muito feliz por você estar aqui!<br />
+      Para tornar esse momento ainda mais inesquecível,<br />
+      registre sua perspectiva: envie uma foto ou vídeo que represente esse dia tão especial. 💖
+    </p>
+
+    <div class="upload-buttons">
+      <form action="api/upload.php" method="POST" enctype="multipart/form-data">
+        <label for="fotoInput">📷 Enviar Foto</label>
+        <input type="file" id="fotoInput" name="foto" accept="image/*" capture="environment" onchange="this.form.submit()" />
+      </form>
+
+      <form action="api/upload.php" method="POST" enctype="multipart/form-data">
+        <label for="videoInput">🎥 Enviar Vídeo</label>
+        <input type="file" id="videoInput" name="video" accept="video/*" capture="environment" onchange="this.form.submit()" />
+      </form>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    <p>
+      Com carinho, <br />
+      Luara Oliveira Rodrigues<br />
+      &copy; 2025 - BOS CREATIVE
+    </p>
+  </footer>
+
+  <script>
+    function startSite() {
+      const welcome = document.getElementById('welcome');
+      const music = document.getElementById('bg-music');
+
+      welcome.classList.add('hidden');
+
+      setTimeout(() => {
+        welcome.remove();
+      }, 800);
+
+      music.play().catch((err) => {
+        console.log("Erro ao tocar música:", err);
+      });
+    }
+  </script>
+</body>
+</html>
